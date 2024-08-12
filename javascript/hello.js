@@ -23,6 +23,7 @@ console.log("Hello World");
 
 let b = 34; // scope is limited to block
 
+
 {
   let a = 12;
   console.log(a);
