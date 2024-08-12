@@ -9,7 +9,7 @@
 // 6 object
 // 7 symbol
 // 8 bigint
-// Array
+// 9 Array
 
 let a = 12;
 console.log(typeof a);
@@ -20,8 +20,6 @@ console.log(typeof b);
 // string // is a collection of character
 let s_name = "Bascom Bridge $%@!*&*()";
 console.log(typeof s_name);
-
-
 
 
 let a1 = 123; // number
