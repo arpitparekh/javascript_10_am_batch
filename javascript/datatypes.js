@@ -21,8 +21,6 @@ console.log(typeof b);
 let s_name = "Bascom Bridge $%@!*&*()";
 console.log(typeof s_name);
 
-
-
 let a1 = 123; // number
 let a2 = "123"; // string
 console.log(a1);
