@@ -92,3 +92,9 @@ console.log(k);
 let v = 45;
 console.log(--v);
 console.log(v);
+
+// bit shift operators
+
+let f = 12 << 3
+// 12 = 1100000
+console.log(f)
