@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console methods</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // Basic logging
+console.log("Hello, world!");
+
+// Warning
+console.warn("This is a warning message");
+
+// Error
+console.error("This is an error message");
+
+// Info
+console.info("This is an informational message");
+
+// Debug
+console.debug("This is a debug message");
+
+// Table
+console.table([{ name: "John", age: 30 }, { name: "Jane", age: 25 }]);
+
+// Group
+console.group("Group 1");
+console.log("Message 1");
+console.log("Message 2");
+console.groupEnd();
+
+// Time
+console.time("Timer");
+// Some code to measure
+console.timeEnd("Timer");
+
+// Assert
+console.assert(1 === 2, "This assertion will fail");
+
+// Clear console
+// console.clear();
+
+// Trace
+console.trace("Trace message");
+
+// Custom styling
+console.log("%cStyled text", "color: blue; font-size: 20px;");
+
+    </script>
+</body>
+</html>
