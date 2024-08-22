@@ -100,3 +100,7 @@ let arr = [
 // 0  1      2        3 ....                                     ...8
 console.log(arr);
 console.log(arr[2]);
+console.log()
+
+// 5!
+// 5*4*3*2*1

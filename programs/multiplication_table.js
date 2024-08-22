@@ -1,4 +1,4 @@
-let num = 99999
+let num = 99999;
 
 // 8 * 1 = 8
 // 8 * 2 = 16
@@ -11,6 +11,6 @@ let num = 99999
 // 8 * 9 = 72
 // 8 * 10 = 80
 
-for(let i = 1;i<=10;i++){
-    console.log(`${num} * ${i}  =  ${num*i}`)
+for (let i = 1; i <= 10; i++) {
+  console.log(`${num} * ${i}  =  ${num * i}`);
 }
