@@ -89,4 +89,3 @@ let result = 10 + mySum(10, 20) + mySub(10, 20);
 console.log(result);
 
 console.log(myMul(mySum(1, 2), mySub(5, 2)));
-

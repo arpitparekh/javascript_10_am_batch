@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Form</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>User Form</title>
+    </head>
 
-<body>
+    <body>
+        <form action="#">
+            <label> Username </label><br />
+            <input
+                id="usernameInput"
+                type="text"
+                name="username"
+                placeholder="Enter your username"
+            /><br />
+            <label> Password </label><br />
+            <input
+                id="passwordInput"
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+            /><br />
 
-  <label> Username </label><br>
-  <input id="usernameInput" type="text" name="username" placeholder="Enter your username"><br>
-  <label> Password </label><br>
-  <input id ="passwordInput" type="password" name="password" placeholder="Enter your password"><br>
+            <button id="myButton" onclick="buttonClick()">Submit</button>
+        </form>
 
-  <button id="myButton" onclick="buttonClick()"> Submit </button>
+        <h3 id="result"></h3>
 
-  <h3 id="result"></h3>
+        <script>
+            let usernameInput = document.getElementById('usernameInput');
+            let passwordInput = document.getElementById('passwordInput');
+            let result = document.getElementById('result');
 
-  <script>
+            function buttonClick() {
+                let userName = usernameInput.value;
+                let password = passwordInput.value;
 
-    let usernameInput = document.getElementById("usernameInput");
-    let passwordInput = document.getElementById("passwordInput");
-    let result = document.getElementById("result");
-
-    function buttonClick(){
-      let userName = usernameInput.value;
-      let password = passwordInput.value;
-
-      result.innerHTML = `Username: ${userName} Password: ${password}`;
-
-    }
-
-
-  </script>
-
-</body>
+                result.innerHTML = `Username: ${userName} Password: ${password}`;
+            }
+        </script>
+    </body>
 </html>
