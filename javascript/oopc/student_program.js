@@ -16,7 +16,7 @@ class Student {
       console.log(`${this.name} has failed with grade ${this.grade}`);
     }
   }
-  
+
 }
 
 s = new Student('Pradip', 60)

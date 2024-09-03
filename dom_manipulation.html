@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List</title>
+</head>
+<body>
+
+  <h1 id="h1">Product List</h1>
+   <h1 id="h1">Product List</h1>
+
+  <!-- dom manupulation (document object model)  -->
+
+  <script>
+
+    let h1 = document.getElementById('h1');
+    h1.innerHTML = 'Hello World';
+    let body = document.body;
+
+    // create an object of exsisting tag
+    // create an object of new tag
+    // remove the tag
+    // h1.remove()
+    // h1.style.backgroundColor="red";
+    // h1.style.color="white"
+
+    let p = document.createElement('p');
+    p.innerHTML = 'Hello World';
+    p.style.color = 'red';
+    p.style.backgroundColor = 'yellow';
+    p.style.fontFamily = "sans-serif";
+    document.body.appendChild(p);
+
+    document.body.style.backgroundColor = 'lightblue';
+
+    let input = document.createElement('input');
+    input.type = 'date';
+    document.body.appendChild(input);
+
+    let br = document.createElement('br');
+    document.body.appendChild(br);
+
+    let button = document.createElement('button');
+    button.innerHTML = 'Click Me';
+
+    button.onclick = function(){
+      alert('Hello World');
+    }
+
+    document.body.appendChild(button);
+
+    document.title = 'Dom manipulation';
+
+    let hObj = document.getElementsByTagName('h1');
+    for (let i = 0; i < hObj.length; i++) {
+      hObj[i].style.color = 'red';
+    }
+
+    // document.body.removeChild(p) // remove specific element
+
+    let p1 = document.createElement('p');
+    p1.innerHTML = 'Hello Student';
+    p1.style.color = 'red';
+    p1.style.backgroundColor = 'yellow';
+    p1.style.fontFamily = "sans-serif";
+    document.body.replaceChild(p1, p);
+
+  </script>
+
+</body>
+</html>
