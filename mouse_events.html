@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Events</title>
+    </head>
+    <body>
+        <h2>Mouse Events</h2>
+
+        <div id="content">
+            <img src="https://picsum.photos/200/300" alt="" id="img" /><br />
+            <button id="btn">Click Me</button>
+        </div>
+
+        <script>
+            let btn = document.getElementById('btn');
+            let image = document.getElementById('img');
+            image.style.width = '200px';
+            image.style.height = '200px';
+
+            let count = 1;
+
+            let letters = [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                'a',
+                'b',
+                'c',
+                'd',
+                'e',
+                'f',
+            ]; // 0..15  // 2
+
+            image.addEventListener('dblclick', function () {
+                image.src = 'https://picsum.photos/200/300?random=' + count;
+                image.style.border = '10px solid';
+
+                count++;
+            });
+
+            function generateRandomColor() {
+                let str = '';
+
+                for (let i = 1; i < 7; i++) {
+                    let randomNumber = Math.floor(
+                        Math.random() * (15 - 0 + 1) + 0
+                    );
+                    str += letters[randomNumber];
+                }
+
+                return str;
+            }
+
+            btn.addEventListener('wheel', function () {
+                btn.style.backgroundColor = '#' + generateRandomColor();
+            });
+
+            image.addEventListener('mousemove', function () {
+              image.style.border = '10px solid';
+                image.style.borderColor = '#' + generateRandomColor();
+            });
+
+
+
+        </script>
+    </body>
+</html>
