@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRMS Dashboard</title>
+
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: lightblue;
+  }
+
+  aside {
+    border-radius: 20px;
+    margin: 10px;
+    width: 250px;
+    background-color: #2196F3;
+    padding: 20px;
+    color: white;
+  }
+
+  nav ul {
+    list-style: none;
+  }
+
+  nav ul li {
+    margin: 20px 0;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    background-color: #1976D2;
+  }
+
+  main {
+    background-color: lightcyan;
+    margin: 10px;
+    flex: 1;
+    padding: 20px;
+    border-radius: 20px;
+  }
+</style>
+
+</head>
+<body>
+
+  <aside>
+    <nav>
+      <ul>
+
+        <li id="home" ">
+          <a onclick="displayScreen('home')">Home</a>
+        </li>
+        <li id="employees" ">
+          <a onclick="displayScreen('employees')">Employees List</a>
+        </li>
+        <li id="attendance" >
+          <a onclick="displayScreen('attendance')">Employess Attendance</a>
+        </li>
+        <li id="salary" onclick="displayScreen('salary')">
+          <a>Employees Salary</a>
+        </li>
+        <li id="services" onclick="displayScreen('services')">
+          <a>Services</a>
+        </li>
+        <li id="settings" onclick="displayScreen('settings')">
+          <a>Settings</a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </aside>
+
+  <main>
+      <div id="main"></div>
+
+  </main>
+
+
+
+  <script>
+
+
+
+    let home = document.getElementById('home');
+    let employees = document.getElementById('employees');
+    let attendance = document.getElementById('attendance');
+    let salary = document.getElementById('salary');
+    let services = document.getElementById('services');
+    let settings = document.getElementById('settings');
+    let mainDiv = document.getElementById('main');
+    let h1 = document.getElementById('content');
+
+
+    function displayScreen(name){
+
+      console.log("Click");
+
+      switch(name){
+        case 'home':
+          loadPage('home_page.html');
+          break;
+        case 'employees':
+        loadPage('employees.html');
+          break;
+        case 'attendance':
+        loadPage('attendance.html');
+          break;
+        case 'salary':
+        loadPage('salary.html');
+          break;
+        case 'services':
+        loadPage('service.html');
+          break;
+        case 'settings':
+        loadPage('settings.html');
+          break;
+      }
+    }
+
+    function loadChart(){
+      const ctx = document.getElementById('myChart').getContext('2d');
+
+            let barColors = [
+                '#dc3545',
+                '#dc3545',
+                '#dc3545',
+                '#dc3545',
+                '#dc3545',
+            ];
+
+            // Create the chart with updated Chart.js configuration
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['a', 'b', 'c', 'd', 'e'],
+                    datasets: [
+                        {
+                            label: 'Bar Chart',
+                            backgroundColor: barColors,
+                            data: [10, 20, 30, 40, 50],
+                        },
+                    ],
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            
+                            display: true,
+                            text: 'Employee status', // Title for the chart
+                        },
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true, // Start y-axis at 0
+                        },
+                    },
+                },
+            });
+    }
+
+    function loadPage(page){
+      fetch(page)
+      .then(response => response.text())
+      .then(data => {
+        mainDiv.innerHTML = data;
+
+        loadChart();
+
+      })
+      .then(error => console.log(error));
+    }
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
