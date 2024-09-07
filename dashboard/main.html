@@ -151,12 +151,12 @@
 
             // Create the chart with updated Chart.js configuration
             new Chart(ctx, {
-                type: 'bar',
+                type: 'line',
                 data: {
                     labels: ['a', 'b', 'c', 'd', 'e'],
                     datasets: [
                         {
-                            label: 'Bar Chart',
+                            label: 'Price',
                             backgroundColor: barColors,
                             data: [10, 20, 30, 40, 50],
                         },
@@ -165,7 +165,7 @@
                 options: {
                     plugins: {
                         title: {
-                            
+
                             display: true,
                             text: 'Employee status', // Title for the chart
                         },
